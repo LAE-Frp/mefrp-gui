@@ -1,12 +1,12 @@
 @ECHO off
 color 2F
-ECHO. »¶Ó­Ê¹ÓÃ ME Frp Winodws amd64 Æô¶¯Æ÷ºËÐÄ£¬Æô¶¯Æ÷ºËÐÄ°æ±¾SNASHOT 1.0
+ECHO. æ¬¢è¿Žä½¿ç”¨ ME Frp Winodws amd64 å¯åŠ¨å™¨æ ¸å¿ƒï¼Œå¯åŠ¨å™¨æ ¸å¿ƒç‰ˆæœ¬SNASHOT 1.0
 ECHO.     __  __ ___   ___         
 ECHO.    /  \/  / __/ / __/ _ ___ 
 ECHO.   / /\// / _/  / _/ '_/ '_\
 ECHO.  /_/  /_/___/ /_//_/ / .__/
 ECHO.                     /_/   
-ECHO. ME Frp ·þÎñ¼´½«Æô¶¯
-ECHO.ÏÂ·½³öÏÖ start proxy success ¼´ÎªËíµÀÆô¶¯³É¹¦£¬·ñÔòËíµÀÉÐÎ´Æô¶¯¡£µØÖ·ÒÑ¸´ÖÆµ½¼ôÌù°å¡£
+ECHO. ME Frp æœåŠ¡å³å°†å¯åŠ¨
+ECHO.ä¸‹æ–¹å‡ºçŽ° start proxy success å³ä¸ºéš§é“å¯åŠ¨æˆåŠŸï¼Œå¦åˆ™éš§é“å°šæœªå¯åŠ¨ã€‚åœ°å€å·²å¤åˆ¶åˆ°å‰ªè´´æ¿ã€‚
 frpc.exe -c frpc.ini
-EXIT
+pause
