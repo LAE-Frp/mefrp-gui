@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string notr="true">Mirror Edge Frp 客户端 - V1.0.2 Released</string>
+   <string notr="true">Mirror Edge Frp 客户端 - V1.3 Released</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
@@ -20,7 +20,7 @@
       <x>10</x>
       <y>10</y>
       <width>601</width>
-      <height>411</height>
+      <height>421</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -47,9 +47,9 @@
       <property name="geometry">
        <rect>
         <x>150</x>
-        <y>110</y>
+        <y>120</y>
         <width>281</width>
-        <height>131</height>
+        <height>121</height>
        </rect>
       </property>
       <property name="placeholderText">
@@ -60,7 +60,7 @@
       <property name="geometry">
        <rect>
         <x>150</x>
-        <y>70</y>
+        <y>50</y>
         <width>291</width>
         <height>21</height>
        </rect>
@@ -75,17 +75,39 @@
        <string notr="true">Token (只有配置完Token才能正常使用)</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="openWebsite">
+      <property name="geometry">
+       <rect>
+        <x>204</x>
+        <y>80</y>
+        <width>151</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string notr="true">打开auth.laecloud.com</string>
+      </property>
+     </widget>
     </widget>
-    <widget class="QWidget" name="tunnel">
+    <widget class="QWidget" name="tunnelStart">
      <attribute name="title">
-      <string notr="true">隧道</string>
+      <string notr="true">启动隧道</string>
      </attribute>
      <widget class="QComboBox" name="chooseTunnel">
       <property name="geometry">
        <rect>
         <x>70</x>
         <y>20</y>
-        <width>231</width>
+        <width>291</width>
         <height>22</height>
        </rect>
       </property>
@@ -99,10 +121,10 @@
      <widget class="QPushButton" name="startTunnel">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>20</y>
-        <width>75</width>
-        <height>21</height>
+        <x>10</x>
+        <y>90</y>
+        <width>81</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
@@ -112,27 +134,14 @@
      <widget class="QPushButton" name="stopTunnel">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>20</y>
-        <width>75</width>
-        <height>21</height>
+        <x>100</x>
+        <y>90</y>
+        <width>101</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string notr="true">停止隧道</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="restartTunnel">
-      <property name="geometry">
-       <rect>
-        <x>490</x>
-        <y>20</y>
-        <width>75</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string notr="true">重启隧道</string>
+       <string notr="true">停止所有隧道</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
@@ -152,9 +161,9 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>100</y>
+        <y>170</y>
         <width>571</width>
-        <height>281</height>
+        <height>211</height>
        </rect>
       </property>
       <property name="focusPolicy">
@@ -168,13 +177,39 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>70</y>
-        <width>101</width>
+        <y>140</y>
+        <width>31</width>
         <height>21</height>
        </rect>
       </property>
       <property name="text">
        <string notr="true">日志</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">操作区</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="refreshTunnel">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>90</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">刷新隧道</string>
       </property>
      </widget>
     </widget>
