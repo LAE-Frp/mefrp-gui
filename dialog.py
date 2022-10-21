@@ -8,7 +8,7 @@ class Ui_Dialog(object):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(400, 180)
-        Dialog.setWindowTitle(u"Mirror Edge Frp \u5ba2\u6237\u7aef - V1.0.2 Released")
+        Dialog.setWindowTitle(u"Mirror Edge Frp \u5ba2\u6237\u7aef - V1.3 Released")
         self.pushButton = QPushButton(Dialog)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(300, 140, 75, 23))
