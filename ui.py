@@ -35,11 +35,12 @@ class Ui_MainWindow(object):
 
         self.response = requests.get('https://api.lae.yistars.net/api/modules/frp/hosts', headers=self.headers)
         self.response.encoding = self.response.apparent_encoding
+        self.tunnels = json.loads(self.response.text)
         if self.response.status_code != 200:
-            self.show_dialog = dialog.ShowInfoDialog("请求失败! 请检查网络连接!")
+            self.show_dialog = dialog.ShowInfoDialog(
+                f"向后端接口发送请求时发生错误:\n\n{self.response.status_code}: {self.tunnels['data']}")
             self.show_dialog.show_dialog()
             return
-        self.tunnels = json.loads(self.response.text)
         self.chooseTunnel.clear()
         for i in range(len(self.tunnels["data"])):
             self.chooseTunnel.addItem(self.tunnels["data"][i]["name"])
@@ -66,12 +67,12 @@ class Ui_MainWindow(object):
         }
 
         self.response = requests.get('https://api.lae.yistars.net/api/modules/frp/hosts', headers=self.headers)
-        if self.response.status_code != 200:
-            self.show_dialog = dialog.ShowInfoDialog("请求失败! 请检查网络连接!")
-            self.show_dialog.show_dialog()
-            return
         self.response.encoding = self.response.apparent_encoding
         self.tunnels = json.loads(self.response.text)
+        if self.response.status_code != 200:
+            self.show_dialog = dialog.ShowInfoDialog(f"向后端接口发送请求时发生错误:\n\n{self.response.status_code}: {self.tunnels['data']}")
+            self.show_dialog.show_dialog()
+            return
         self.regular = re.compile(r'.*?"id":(\d+),"name":"{}".*?'.format(self.chooseTunnel.currentText()))
         self.tunnelId = re.findall(self.regular, self.response.text)[0]
         self.headers_more = {
@@ -114,12 +115,12 @@ ME Frp 服务即将启动
 
     def openTokenWebsite(self):
         webbrowser.open("https://auth.laecloud.com/")
-
+    
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(620, 440)
-        MainWindow.setWindowTitle(u"Mirror Edge Frp \u5ba2\u6237\u7aef - V1.3 Released")
+        MainWindow.setWindowTitle(u"Mirror Edge Frp \u5ba2\u6237\u7aef - V1.4 Released")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
@@ -156,20 +157,20 @@ ME Frp 服务即将启动
         self.tunnelStart.setObjectName(u"tunnelStart")
         self.chooseTunnel = QComboBox(self.tunnelStart)
         self.chooseTunnel.setObjectName(u"chooseTunnel")
-        self.chooseTunnel.setGeometry(QRect(70, 20, 291, 22))
+        self.chooseTunnel.setGeometry(QRect(100, 20, 291, 22))
         self.chooseTunnel.setCurrentText(u"")
         self.chooseTunnel.setPlaceholderText(u"--\u8bf7\u9009\u62e9--")
         self.startTunnel = QPushButton(self.tunnelStart)
         self.startTunnel.setObjectName(u"startTunnel")
-        self.startTunnel.setGeometry(QRect(10, 90, 81, 31))
+        self.startTunnel.setGeometry(QRect(10, 90, 91, 31))
         self.startTunnel.setText(u"\u542f\u52a8\u96a7\u9053")
         self.stopTunnel = QPushButton(self.tunnelStart)
         self.stopTunnel.setObjectName(u"stopTunnel")
-        self.stopTunnel.setGeometry(QRect(100, 90, 101, 31))
+        self.stopTunnel.setGeometry(QRect(110, 90, 111, 31))
         self.stopTunnel.setText(u"\u505c\u6b62\u6240\u6709\u96a7\u9053")
         self.label_2 = QLabel(self.tunnelStart)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(10, 20, 54, 21))
+        self.label_2.setGeometry(QRect(10, 20, 71, 21))
         self.label_2.setText(u"\u9009\u62e9\u96a7\u9053")
         self.outputLog = QTextEdit(self.tunnelStart)
         self.outputLog.setObjectName(u"outputLog")
@@ -178,15 +179,15 @@ ME Frp 服务即将启动
         self.outputLog.setReadOnly(True)
         self.label_3 = QLabel(self.tunnelStart)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(10, 140, 31, 21))
+        self.label_3.setGeometry(QRect(10, 140, 41, 21))
         self.label_3.setText(u"\u65e5\u5fd7")
         self.label_8 = QLabel(self.tunnelStart)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(10, 60, 41, 21))
+        self.label_8.setGeometry(QRect(10, 60, 61, 21))
         self.label_8.setText(u"\u64cd\u4f5c\u533a")
         self.refreshTunnel = QPushButton(self.tunnelStart)
         self.refreshTunnel.setObjectName(u"refreshTunnel")
-        self.refreshTunnel.setGeometry(QRect(500, 90, 81, 31))
+        self.refreshTunnel.setGeometry(QRect(490, 90, 91, 31))
         self.refreshTunnel.setText(u"\u5237\u65b0\u96a7\u9053")
         self.tabWidget.addTab(self.tunnelStart, "")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tunnelStart), u"\u542f\u52a8\u96a7\u9053")
@@ -237,7 +238,7 @@ ME Frp 服务即将启动
         self.stopTunnel.clicked.connect(self.stop_tunnel)
         self.openWebsite.clicked.connect(self.openTokenWebsite)
         self.refreshTunnel.clicked.connect(self.listOfTunnel)
-        # 设置禁用停止/重启隧道按钮
+        # 设置禁用停止所有隧道按钮
         self.stopTunnel.setDisabled(True)
 
         # 如果有token.txt文件直接切换到隧道板块
@@ -249,5 +250,69 @@ ME Frp 服务即将启动
         border: none;
         color: #0d6efd;
         text-decoration: underline;
+        """)
+        self.setToken.setStyleSheet("""
+        QPushButton {
+            color: #fff;
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            font-weight: 400;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            outline: none;
+        }
+        QPushButton:hover {
+            color: #fff;
+            background-color: #0b5ed7;
+            border-color: transparent;
+        }
+        """)
+        self.startTunnel.setStyleSheet("""
+        QPushButton {
+            color: #fff;
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            font-weight: 400;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            outline: none;
+        }
+        QPushButton:hover {
+            color: #fff;
+            background-color: #0b5ed7;
+            border-color: transparent;
+        }
+        """)
+        self.stopTunnel.setStyleSheet("""
+        QPushButton {
+            color: #fff;
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            font-weight: 400;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            outline: none;
+        }
+        QPushButton:hover {
+            color: #fff;
+            background-color: #0b5ed7;
+            border-color: transparent;
+        }
+        """)
+        self.refreshTunnel.setStyleSheet("""
+        QPushButton {
+            color: #fff;
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            font-weight: 400;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            outline: none;
+        }
+        QPushButton:hover {
+            color: #fff;
+            background-color: #0b5ed7;
+            border-color: transparent;
+        }
         """)
         QMetaObject.connectSlotsByName(MainWindow)
