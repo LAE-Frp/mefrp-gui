@@ -9,7 +9,7 @@ class Ui_Dialog(object):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
         Dialog.resize(400, 180)
-        Dialog.setWindowTitle(u"Mirror Edge Frp \u5ba2\u6237\u7aef - V1.4 Released")
+        Dialog.setWindowTitle(u"Mirror Edge Frp \u5ba2\u6237\u7aef - V1.5 Released")
         self.pushButton = QPushButton(Dialog)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(300, 140, 75, 23))
@@ -26,22 +26,6 @@ class Ui_Dialog(object):
 
         self.pushButton.clicked.connect(Dialog.close)
         Dialog.setWindowFlags(PyQt5.QtCore.Qt.WindowStaysOnTopHint | PyQt5.QtCore.Qt.WindowCloseButtonHint)
-        self.pushButton.setStyleSheet("""
-        QPushButton {
-            color: #fff;
-            background-color: #0d6efd;
-            border-color: #0d6efd;
-            font-weight: 400;
-            border: 1px solid transparent;
-            border-radius: 4px;
-            outline: none;
-        }
-        QPushButton:hover {
-            color: #fff;
-            background-color: #0b5ed7;
-            border-color: transparent;
-        }
-        """)
 
         QMetaObject.connectSlotsByName(Dialog)
 

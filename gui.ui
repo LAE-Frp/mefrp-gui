@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string notr="true">Mirror Edge Frp 客户端 - V1.3 Released</string>
+   <string notr="true">Mirror Edge Frp 客户端 - V1.5 Released</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Token_Settings">
      <attribute name="title">
@@ -53,7 +53,7 @@
        </rect>
       </property>
       <property name="placeholderText">
-       <string notr="true">第一次使用请到auth.laecloud.com, 点击&quot;获取新的Token&quot;按钮, 将Token复制到这里, 然后点击&quot;设置Token&quot;按钮</string>
+       <string notr="true">第一次使用请到api.laecloud.com, 点击&quot;获取新的Token&quot;按钮, 将Token复制到这里, 然后点击&quot;设置Token&quot;按钮</string>
       </property>
      </widget>
      <widget class="QLabel" name="label">
@@ -94,8 +94,148 @@
        <string notr="true"/>
       </property>
       <property name="text">
-       <string notr="true">打开auth.laecloud.com</string>
+       <string notr="true">打开api.laecloud.com</string>
       </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="personal_info">
+     <attribute name="title">
+      <string notr="true">个人信息</string>
+     </attribute>
+     <widget class="QTableWidget" name="info_table">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>571</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="rowCount">
+       <number>6</number>
+      </property>
+      <property name="columnCount">
+       <number>2</number>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>290</number>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>40</number>
+      </attribute>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <column/>
+      <column/>
+      <item row="0" column="0">
+       <property name="text">
+        <string notr="true">名称</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="0" column="1">
+       <property name="text">
+        <string notr="true">值</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="1" column="0">
+       <property name="text">
+        <string notr="true">用户名</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="1" column="1">
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="2" column="0">
+       <property name="text">
+        <string notr="true">用户ID</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="2" column="1">
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="3" column="0">
+       <property name="text">
+        <string notr="true">余额</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="3" column="1">
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="4" column="0">
+       <property name="text">
+        <string notr="true">Drops</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="4" column="1">
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="5" column="0">
+       <property name="text">
+        <string notr="true">邮箱</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
+      <item row="5" column="1">
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </item>
      </widget>
     </widget>
     <widget class="QWidget" name="tunnelStart">
@@ -210,6 +350,194 @@
       </property>
       <property name="text">
        <string notr="true">刷新隧道</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="createTunnel">
+     <attribute name="title">
+      <string notr="true">新建隧道</string>
+     </attribute>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">隧道名称</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tunnelName">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">本地地址和端口</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="local_ip">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>180</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">127.0.0.1:80</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>220</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">协议</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="protocol">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>250</y>
+        <width>121</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string notr="true">HTTP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string notr="true">HTTPS</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string notr="true">TCP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string notr="true">UDP</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="open_status_page">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string notr="true">打开服务器状态页面</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>80</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">选择支持HTTP协议的节点</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="protocol_ok">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>250</y>
+        <width>71</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">确定</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="choose_server">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>110</y>
+        <width>221</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>150</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">特殊参数</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="special_argument">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>180</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string notr="true">绑定域名</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="create_tunnel_ok">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>240</y>
+        <width>221</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">确定</string>
       </property>
      </widget>
     </widget>

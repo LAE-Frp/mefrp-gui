@@ -296,3 +296,7 @@ cython_debug/
 # temp config
 temp/
 token.txt
+
+# 打包文件
+Mirror_Edge_Frp_Python_Win.zip
+Mirror_Edge_Frp_Python_Win/
