@@ -1,12 +1,14 @@
 # Mirror Edge Frp 客户端
 
 Desktop Client for Mirror Edge Frp
+
 莱云 镜缘映射 桌面客户端
 
 支持64位的Windows
 
 从Release下载存在障碍的用户请从这里下载：
 https://iruanp.lanzoub.com/b07oabraf
+
 密码:a4hh
 
 ## 依赖
@@ -24,4 +26,5 @@ https://iruanp.lanzoub.com/b07oabraf
 ## 常见问题
 
 Q: 隧道怎么启动不了？`The system cannot find the file specified`
+
 A: 请重命名隧道，隧道命名中不要含有空格，已知是软件问题
