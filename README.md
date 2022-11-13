@@ -6,11 +6,6 @@ Desktop Client for Mirror Edge Frp
 
 支持64位的Windows
 
-从Release下载存在障碍的用户请从这里下载：
-https://iruanp.lanzoub.com/b07oabraf
-
-密码:a4hh
-
 ## 依赖
 
 发布的压缩包中包含了依赖的外部文件和Frp的客户端可执行文件
