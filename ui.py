@@ -5,10 +5,9 @@ import re
 import webbrowser
 
 import requests
-from PyQt5.Qt import *
 from PyQt5.QtGui import *
-# from PyQt5.QtCore import *
-# from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 
 import dialog
 
@@ -42,7 +41,8 @@ class Ui_MainWindow(object):
         if not os.path.exists("token.txt"):
             self.show_dialog = dialog.ShowInfoDialog("您尚未设置Token!")
             self.show_dialog.show_dialog()
-            return
+            # 特殊需求return false
+            return False
         with open("token.txt", 'r', encoding="utf-8") as f:
             self.token_data = f.read()
         self.token_data = self.token_data.strip()
@@ -532,9 +532,21 @@ ME Frp 服务即将启动
 
         self.tabWidget.setCurrentIndex(0)
 
+        # StyleSheet部分
+        self.openWebsite.setStyleSheet("""
+        border: none;
+        color: #0d6efd;
+        text-decoration: underline;
+        """)
+        self.open_status_page.setStyleSheet("""
+        border: none;
+        color: #0d6efd;
+        text-decoration: underline;
+        """)
+
         QMetaObject.connectSlotsByName(MainWindow)
 
-        # 自定义代码部分
+        # 自定义代码部分 / 逻辑代码部分
         self.listOfTunnel()
 
         # 按钮点击事件绑定
@@ -552,26 +564,27 @@ ME Frp 服务即将启动
         self.tunnelName.setText(self.randomTunnelName())
         # 获取用户信息并填入表中
         self.info = self.getPersonalInfo()
-        __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setText(self.info[0])
-        __qtablewidgetitem.setTextAlignment(Qt.AlignCenter)
-        self.info_table.setItem(1, 1, __qtablewidgetitem)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setText(self.info[1])
-        __qtablewidgetitem2.setTextAlignment(Qt.AlignCenter)
-        self.info_table.setItem(2, 1, __qtablewidgetitem2)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        __qtablewidgetitem3.setText(self.info[2])
-        __qtablewidgetitem3.setTextAlignment(Qt.AlignCenter)
-        self.info_table.setItem(3, 1, __qtablewidgetitem3)
-        __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setText(self.info[3])
-        __qtablewidgetitem4.setTextAlignment(Qt.AlignCenter)
-        self.info_table.setItem(4, 1, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        __qtablewidgetitem5.setText(self.info[4])
-        __qtablewidgetitem5.setTextAlignment(Qt.AlignCenter)
-        self.info_table.setItem(5, 1, __qtablewidgetitem5)
+        if self.info != False:
+            __qtablewidgetitem = QTableWidgetItem()
+            __qtablewidgetitem.setText(self.info[0])
+            __qtablewidgetitem.setTextAlignment(Qt.AlignCenter)
+            self.info_table.setItem(1, 1, __qtablewidgetitem)
+            __qtablewidgetitem2 = QTableWidgetItem()
+            __qtablewidgetitem2.setText(self.info[1])
+            __qtablewidgetitem2.setTextAlignment(Qt.AlignCenter)
+            self.info_table.setItem(2, 1, __qtablewidgetitem2)
+            __qtablewidgetitem3 = QTableWidgetItem()
+            __qtablewidgetitem3.setText(self.info[2])
+            __qtablewidgetitem3.setTextAlignment(Qt.AlignCenter)
+            self.info_table.setItem(3, 1, __qtablewidgetitem3)
+            __qtablewidgetitem4 = QTableWidgetItem()
+            __qtablewidgetitem4.setText(self.info[3])
+            __qtablewidgetitem4.setTextAlignment(Qt.AlignCenter)
+            self.info_table.setItem(4, 1, __qtablewidgetitem4)
+            __qtablewidgetitem5 = QTableWidgetItem()
+            __qtablewidgetitem5.setText(self.info[4])
+            __qtablewidgetitem5.setTextAlignment(Qt.AlignCenter)
+            self.info_table.setItem(5, 1, __qtablewidgetitem5)
         # 获取服务器列表 供新建隧道板块使用
         if not os.path.exists("token.txt"):
             self.show_dialog = dialog.ShowInfoDialog("您尚未设置Token!")
@@ -601,16 +614,3 @@ ME Frp 服务即将启动
         # 如果有token.txt文件直接切换到隧道板块
         if os.path.exists("token.txt"):
             self.tabWidget.setCurrentIndex(2)
-
-        # StyleSheet部分
-        self.openWebsite.setStyleSheet("""
-        border: none;
-        color: #0d6efd;
-        text-decoration: underline;
-        """)
-        self.open_status_page.setStyleSheet("""
-        border: none;
-        color: #0d6efd;
-        text-decoration: underline;
-        """)
-        QMetaObject.connectSlotsByName(MainWindow)
