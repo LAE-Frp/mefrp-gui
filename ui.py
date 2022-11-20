@@ -37,6 +37,21 @@ class Ui_MainWindow(object):
             self.gen_tunnel_name = self.gen_tunnel_name + self.gen_tunnel_name_list[i]
         return self.gen_tunnel_name
 
+    def clear_cache(self):
+        try:
+            self.allIniFile = os.listdir("temp")
+        except FileNotFoundError:
+            self.show_dialog = dialog.ShowInfoDialog("无缓存配置可清理!")
+            self.show_dialog.show_dialog()
+            return
+        os.chdir("temp")
+        for i in range(len(self.allIniFile)):
+            os.remove(self.allIniFile[i])
+        os.chdir("..")
+        os.rmdir("temp")
+        self.show_dialog = dialog.ShowInfoDialog("清理成功!")
+        self.show_dialog.show_dialog()
+
     def getPersonalInfo(self):
         if not os.path.exists("token.txt"):
             self.show_dialog = dialog.ShowInfoDialog("您尚未设置Token!")
@@ -68,7 +83,6 @@ class Ui_MainWindow(object):
         self.return_data.append(self.personal_info["data"]["name"])
         self.return_data.append(str(self.personal_info["data"]["id"]))
         self.return_data.append(str(self.personal_info["data"]["balance"]))
-        self.return_data.append(str(self.personal_info["data"]["drops"]))
         self.return_data.append(self.personal_info["data"]["email"])
         return self.return_data
 
@@ -303,7 +317,7 @@ ME Frp 服务即将启动
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(620, 440)
-        MainWindow.setWindowTitle(u"Mirror Edge Frp \u5ba2\u6237\u7aef - V1.5 Released")
+        MainWindow.setWindowTitle(u"Mirror Edge Frp \u5ba2\u6237\u7aef - V1.6 Released")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
@@ -342,55 +356,48 @@ ME Frp 服务即将启动
         self.info_table = QTableWidget(self.personal_info)
         if (self.info_table.columnCount() < 2):
             self.info_table.setColumnCount(2)
-        if (self.info_table.rowCount() < 6):
-            self.info_table.setRowCount(6)
+        if (self.info_table.rowCount() < 5):
+            self.info_table.setRowCount(5)
         __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setText(u"\u540d\u79f0")
-        __qtablewidgetitem.setTextAlignment(Qt.AlignCenter)
+        __qtablewidgetitem.setText(u"\u540d\u79f0");
+        __qtablewidgetitem.setTextAlignment(Qt.AlignCenter);
         self.info_table.setItem(0, 0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setText(u"\u503c")
-        __qtablewidgetitem1.setTextAlignment(Qt.AlignCenter)
+        __qtablewidgetitem1.setText(u"\u503c");
+        __qtablewidgetitem1.setTextAlignment(Qt.AlignCenter);
         self.info_table.setItem(0, 1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setText(u"\u7528\u6237\u540d")
-        __qtablewidgetitem2.setTextAlignment(Qt.AlignCenter)
+        __qtablewidgetitem2.setText(u"\u7528\u6237\u540d");
+        __qtablewidgetitem2.setTextAlignment(Qt.AlignCenter);
         self.info_table.setItem(1, 0, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        __qtablewidgetitem3.setTextAlignment(Qt.AlignCenter)
+        __qtablewidgetitem3.setTextAlignment(Qt.AlignCenter);
         self.info_table.setItem(1, 1, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
         __qtablewidgetitem4.setText(u"\u7528\u6237ID");
-        __qtablewidgetitem4.setTextAlignment(Qt.AlignCenter)
+        __qtablewidgetitem4.setTextAlignment(Qt.AlignCenter);
         self.info_table.setItem(2, 0, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
-        __qtablewidgetitem5.setTextAlignment(Qt.AlignCenter)
+        __qtablewidgetitem5.setTextAlignment(Qt.AlignCenter);
         self.info_table.setItem(2, 1, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
-        __qtablewidgetitem6.setText(u"\u4f59\u989d")
-        __qtablewidgetitem6.setTextAlignment(Qt.AlignCenter)
+        __qtablewidgetitem6.setText(u"\u4f59\u989d");
+        __qtablewidgetitem6.setTextAlignment(Qt.AlignCenter);
         self.info_table.setItem(3, 0, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
-        __qtablewidgetitem7.setTextAlignment(Qt.AlignCenter)
+        __qtablewidgetitem7.setTextAlignment(Qt.AlignCenter);
         self.info_table.setItem(3, 1, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
-        __qtablewidgetitem8.setText(u"Drops")
-        __qtablewidgetitem8.setTextAlignment(Qt.AlignCenter)
+        __qtablewidgetitem8.setText(u"\u90ae\u7bb1");
+        __qtablewidgetitem8.setTextAlignment(Qt.AlignCenter);
         self.info_table.setItem(4, 0, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
-        __qtablewidgetitem9.setTextAlignment(Qt.AlignCenter)
+        __qtablewidgetitem9.setTextAlignment(Qt.AlignCenter);
         self.info_table.setItem(4, 1, __qtablewidgetitem9)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        __qtablewidgetitem10.setText(u"\u90ae\u7bb1")
-        __qtablewidgetitem10.setTextAlignment(Qt.AlignCenter)
-        self.info_table.setItem(5, 0, __qtablewidgetitem10)
-        __qtablewidgetitem11 = QTableWidgetItem()
-        __qtablewidgetitem11.setTextAlignment(Qt.AlignCenter)
-        self.info_table.setItem(5, 1, __qtablewidgetitem11)
         self.info_table.setObjectName(u"info_table")
         self.info_table.setGeometry(QRect(10, 10, 571, 371))
         self.info_table.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.info_table.setRowCount(6)
+        self.info_table.setRowCount(5)
         self.info_table.setColumnCount(2)
         self.info_table.horizontalHeader().setVisible(False)
         self.info_table.horizontalHeader().setDefaultSectionSize(290)
@@ -434,6 +441,10 @@ ME Frp 服务即将启动
         self.refreshTunnel.setObjectName(u"refreshTunnel")
         self.refreshTunnel.setGeometry(QRect(490, 90, 91, 31))
         self.refreshTunnel.setText(u"\u5237\u65b0\u96a7\u9053")
+        self.clearCache = QPushButton(self.tunnelStart)
+        self.clearCache.setObjectName(u"clearCache")
+        self.clearCache.setGeometry(QRect(370, 90, 111, 31))
+        self.clearCache.setText(u"\u6e05\u9664\u914d\u7f6e\u6587\u4ef6\u7f13\u5b58")
         self.tabWidget.addTab(self.tunnelStart, "")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tunnelStart), u"\u542f\u52a8\u96a7\u9053")
         self.createTunnel = QWidget()
@@ -558,6 +569,7 @@ ME Frp 服务即将启动
         self.open_status_page.clicked.connect(self.openStatusWebsite)
         self.protocol_ok.clicked.connect(self.updateCreateTunnelPage)
         self.create_tunnel_ok.clicked.connect(self.create_tunnel)
+        self.clearCache.clicked.connect(self.clear_cache)
         # 设置禁用停止所有隧道按钮
         self.stopTunnel.setDisabled(True)
         # 设置新建隧道 隧道名称
@@ -581,10 +593,6 @@ ME Frp 服务即将启动
             __qtablewidgetitem4.setText(self.info[3])
             __qtablewidgetitem4.setTextAlignment(Qt.AlignCenter)
             self.info_table.setItem(4, 1, __qtablewidgetitem4)
-            __qtablewidgetitem5 = QTableWidgetItem()
-            __qtablewidgetitem5.setText(self.info[4])
-            __qtablewidgetitem5.setTextAlignment(Qt.AlignCenter)
-            self.info_table.setItem(5, 1, __qtablewidgetitem5)
         # 获取服务器列表 供新建隧道板块使用
         if not os.path.exists("token.txt"):
             self.show_dialog = dialog.ShowInfoDialog("您尚未设置Token!")

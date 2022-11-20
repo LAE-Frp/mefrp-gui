@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string notr="true">Mirror Edge Frp 客户端 - V1.5 Released</string>
+   <string notr="true">Mirror Edge Frp 客户端 - V1.6 Released</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
@@ -115,7 +115,7 @@
        <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
       <property name="rowCount">
-       <number>6</number>
+       <number>5</number>
       </property>
       <property name="columnCount">
        <number>2</number>
@@ -132,7 +132,6 @@
       <attribute name="verticalHeaderDefaultSectionSize">
        <number>40</number>
       </attribute>
-      <row/>
       <row/>
       <row/>
       <row/>
@@ -206,29 +205,13 @@
       </item>
       <item row="4" column="0">
        <property name="text">
-        <string notr="true">Drops</string>
-       </property>
-       <property name="textAlignment">
-        <set>AlignCenter</set>
-       </property>
-      </item>
-      <item row="4" column="1">
-       <property name="text">
-        <string notr="true"/>
-       </property>
-       <property name="textAlignment">
-        <set>AlignCenter</set>
-       </property>
-      </item>
-      <item row="5" column="0">
-       <property name="text">
         <string notr="true">邮箱</string>
        </property>
        <property name="textAlignment">
         <set>AlignCenter</set>
        </property>
       </item>
-      <item row="5" column="1">
+      <item row="4" column="1">
        <property name="text">
         <string notr="true"/>
        </property>
@@ -350,6 +333,19 @@
       </property>
       <property name="text">
        <string notr="true">刷新隧道</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clearCache">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>90</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">清除配置文件缓存</string>
       </property>
      </widget>
     </widget>
