@@ -25,7 +25,7 @@
     </property>
     <property name="font">
      <font>
-      <family>微软雅黑</family>
+      <family>宋体</family>
      </font>
     </property>
     <property name="currentIndex">
@@ -46,7 +46,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -64,7 +64,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="placeholderText">
@@ -82,7 +82,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
         <pointsize>12</pointsize>
        </font>
       </property>
@@ -101,7 +101,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="cursor">
@@ -256,7 +256,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="currentText">
@@ -277,7 +277,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -295,7 +295,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -313,7 +313,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -331,7 +331,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="focusPolicy">
@@ -352,7 +352,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -370,7 +370,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -388,7 +388,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -406,7 +406,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -429,7 +429,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -447,7 +447,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
      </widget>
@@ -462,7 +462,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -480,7 +480,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -498,7 +498,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -516,7 +516,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <item>
@@ -551,7 +551,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="cursor">
@@ -572,7 +572,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -590,7 +590,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -608,7 +608,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
      </widget>
@@ -623,7 +623,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -641,7 +641,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="placeholderText">
@@ -659,7 +659,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
        </font>
       </property>
       <property name="text">
@@ -806,7 +806,7 @@
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>Courier</family>
         <pointsize>16</pointsize>
        </font>
       </property>
@@ -834,7 +834,7 @@ Aehxy 策划 / 运营
       </property>
       <property name="font">
        <font>
-        <family>微软雅黑</family>
+        <family>宋体</family>
         <pointsize>12</pointsize>
        </font>
       </property>
