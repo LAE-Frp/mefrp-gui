@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string notr="true">Mirror Edge Frp 客户端 - V1.0.2 Released</string>
+   <string notr="true">Mirror Edge Frp 客户端 - V1.7 Released</string>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">

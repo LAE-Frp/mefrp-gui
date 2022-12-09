@@ -17,9 +17,3 @@ Desktop Client for Mirror Edge Frp
 ## 操作逻辑
 
 初次使用时，请粘贴 Token，点击保存，**并重启软件**
-
-## 常见问题
-
-Q: 隧道怎么启动不了？`The system cannot find the file specified`
-
-A: 请重命名隧道，隧道命名中不要含有空格，已知是软件问题

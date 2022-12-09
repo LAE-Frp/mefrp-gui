@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string notr="true">Mirror Edge Frp 客户端 - V1.6 Released</string>
+   <string notr="true">Mirror Edge Frp 客户端 - V1.7 Released</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
@@ -23,21 +23,31 @@
       <height>421</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+     </font>
+    </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="Token_Settings">
+    <widget class="QWidget" name="tokenSettings">
      <attribute name="title">
       <string notr="true">Token设置</string>
      </attribute>
-     <widget class="QPushButton" name="setToken">
+     <widget class="QPushButton" name="setTokenBtn">
       <property name="geometry">
        <rect>
         <x>150</x>
         <y>250</y>
         <width>281</width>
-        <height>23</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
       </property>
       <property name="text">
        <string notr="true">设置Token</string>
@@ -51,6 +61,11 @@
         <width>281</width>
         <height>121</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
       </property>
       <property name="placeholderText">
        <string notr="true">第一次使用请到api.laecloud.com, 点击&quot;获取新的Token&quot;按钮, 将Token复制到这里, 然后点击&quot;设置Token&quot;按钮</string>
@@ -67,7 +82,7 @@
       </property>
       <property name="font">
        <font>
-        <family>SimSun-ExtB</family>
+        <family>微软雅黑</family>
         <pointsize>12</pointsize>
        </font>
       </property>
@@ -84,6 +99,11 @@
         <height>23</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
@@ -98,11 +118,11 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="personal_info">
+    <widget class="QWidget" name="personalInfo">
      <attribute name="title">
       <string notr="true">个人信息</string>
      </attribute>
-     <widget class="QTableWidget" name="info_table">
+     <widget class="QTableWidget" name="infoTable">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -221,7 +241,7 @@
       </item>
      </widget>
     </widget>
-    <widget class="QWidget" name="tunnelStart">
+    <widget class="QWidget" name="startTunnel">
      <attribute name="title">
       <string notr="true">启动隧道</string>
      </attribute>
@@ -234,6 +254,11 @@
         <height>22</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="currentText">
        <string notr="true"/>
       </property>
@@ -241,7 +266,7 @@
        <string notr="true">--请选择--</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="startTunnel">
+     <widget class="QPushButton" name="startTunnelBtn">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -250,11 +275,16 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">启动隧道</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="stopTunnel">
+     <widget class="QPushButton" name="stopTunnelBtn">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -262,6 +292,11 @@
         <width>111</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
       </property>
       <property name="text">
        <string notr="true">停止所有隧道</string>
@@ -276,6 +311,11 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">选择隧道</string>
       </property>
@@ -288,6 +328,11 @@
         <width>571</width>
         <height>211</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
       </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
@@ -305,6 +350,11 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">日志</string>
       </property>
@@ -318,11 +368,16 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">操作区</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="refreshTunnel">
+     <widget class="QPushButton" name="refreshTunnelBtn">
       <property name="geometry">
        <rect>
         <x>490</x>
@@ -331,11 +386,16 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">刷新隧道</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="clearCache">
+     <widget class="QPushButton" name="clearCacheBtn">
       <property name="geometry">
        <rect>
         <x>370</x>
@@ -343,6 +403,11 @@
         <width>111</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
       </property>
       <property name="text">
        <string notr="true">清除配置文件缓存</string>
@@ -362,6 +427,11 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">隧道名称</string>
       </property>
@@ -375,6 +445,11 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
      </widget>
      <widget class="QLabel" name="label_10">
       <property name="geometry">
@@ -385,11 +460,16 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">本地地址和端口</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="local_ip">
+     <widget class="QLineEdit" name="localIP">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -397,6 +477,11 @@
         <width>201</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
       </property>
       <property name="text">
        <string notr="true">127.0.0.1:80</string>
@@ -411,6 +496,11 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">协议</string>
       </property>
@@ -423,6 +513,11 @@
         <width>121</width>
         <height>22</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
       </property>
       <item>
        <property name="text">
@@ -445,7 +540,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="open_status_page">
+     <widget class="QPushButton" name="openStatusPage">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -453,6 +548,11 @@
         <width>201</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
       </property>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
@@ -470,11 +570,16 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">选择支持HTTP协议的节点</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="protocol_ok">
+     <widget class="QPushButton" name="protocolBtn">
       <property name="geometry">
        <rect>
         <x>150</x>
@@ -483,11 +588,16 @@
         <height>23</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">确定</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="choose_server">
+     <widget class="QComboBox" name="chooseServer">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -495,6 +605,11 @@
         <width>221</width>
         <height>22</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
       </property>
      </widget>
      <widget class="QLabel" name="label_13">
@@ -506,11 +621,16 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">特殊参数</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="special_argument">
+     <widget class="QLineEdit" name="specialArgument">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -519,11 +639,16 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="placeholderText">
        <string notr="true">绑定域名</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="create_tunnel_ok">
+     <widget class="QPushButton" name="createTunnelBtn">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -532,32 +657,42 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+       </font>
+      </property>
       <property name="text">
        <string notr="true">确定</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="about">
+    <widget class="QWidget" name="cleanMemory">
      <attribute name="title">
-      <string notr="true">关于</string>
+      <string notr="true">清理内存</string>
      </attribute>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>60</y>
-        <width>601</width>
-        <height>51</height>
+        <x>10</x>
+        <y>20</y>
+        <width>581</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Segoe UI</family>
+        <family>微软雅黑</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(220, 53, 69)</string>
+      </property>
       <property name="text">
-       <string notr="true">Copyright © kingc, All rights reserved.</string>
+       <string notr="true">清理内存有时可能带来不可逆的后果！</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -566,67 +701,148 @@
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>110</y>
-        <width>601</width>
-        <height>51</height>
+        <x>10</x>
+        <y>60</y>
+        <width>581</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Segoe UI</family>
+        <family>微软雅黑</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(220, 53, 69)</string>
+      </property>
       <property name="text">
-       <string notr="true">Copyright © ME Frp 2022.</string>
+       <string notr="true">若需要清理内存，请一次一次点击下列按钮！切勿心急！</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QPushButton" name="workingSetsBtn">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>130</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">Empty Working Sets</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="systemWorkingSetsBtn">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>130</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">Empty System Working Sets</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="modifiedPageListBtn">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>180</y>
+        <width>411</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">Empty Modified Page List（此选项会卡住1-2分钟）</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="standbyListBtn">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>230</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">Empty Standby List</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="priority0StandbyBtn">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>230</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">Empty Priority 0 standby List</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="about">
+     <attribute name="title">
+      <string notr="true">关于</string>
+     </attribute>
+     <widget class="QLabel" name="label_15">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>240</y>
+        <y>40</y>
         <width>601</width>
-        <height>51</height>
+        <height>221</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Comic Sans MS</family>
+        <family>微软雅黑</family>
         <pointsize>16</pointsize>
        </font>
       </property>
       <property name="text">
-       <string notr="true">Designed By Qt Designer</string>
+       <string notr="true">Copyright © kingc, All rights reserved.
+
+Copyright © ME Frp 2022.
+
+Aehxy 策划 / 运营
+
+莱云 所有</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QPushButton" name="gotoGitHub">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>280</y>
-        <width>601</width>
-        <height>51</height>
+        <x>184</x>
+        <y>292</y>
+        <width>231</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Comic Sans MS</family>
-        <pointsize>16</pointsize>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
-      <property name="text">
-       <string notr="true">This program uses Qt version 5.15.4</string>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="text">
+       <string notr="true">前往本项目的GitHub仓库</string>
       </property>
      </widget>
     </widget>
