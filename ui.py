@@ -143,7 +143,7 @@ class Ui_MainWindow(object):
         self.regular = re.compile(r'.*?"id":(\d+),"name":"{}".*?'.format(self.chooseTunnel.currentText()))
         self.tunnelId = re.findall(self.regular, self.response.text)[0]
         self.headers_more = {
-            'authorization': f'Bearer {self.token_data}',
+            'authorization': f'Bearer {ini.readToken()}',
         }
         self.response = requests.get(f'https://api.laecloud.com/api/modules/frp/hosts/{self.tunnelId}',
                                      headers=self.headers_more)
