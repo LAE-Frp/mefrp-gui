@@ -76,10 +76,10 @@ class Ui_MainWindow(object):
             self.show_dialog.show_dialog()
             return
         self.return_data = []
-        self.return_data.append(self.personal_info["data"]["name"])
-        self.return_data.append(str(self.personal_info["data"]["id"]))
-        self.return_data.append(str(self.personal_info["data"]["balance"]))
-        self.return_data.append(self.personal_info["data"]["email"])
+        self.return_data.append(self.personal_info["name"])
+        self.return_data.append(str(self.personal_info["id"]))
+        self.return_data.append(str(self.personal_info["balance"]))
+        self.return_data.append(self.personal_info["email"])
         return self.return_data
 
     def listOfTunnel(self):
@@ -106,8 +106,8 @@ class Ui_MainWindow(object):
             self.show_dialog.show_dialog()
             return
         self.chooseTunnel.clear()
-        for i in range(len(self.tunnels["data"])):
-            self.chooseTunnel.addItem(self.tunnels["data"][i]["name"])
+        for i in range(len(self.tunnels)):
+            self.chooseTunnel.addItem(self.tunnels[i]["name"])
 
     def start_tunnel(self):
         if not os.path.exists("config.ini"):
@@ -157,17 +157,17 @@ class Ui_MainWindow(object):
             return
         if self.response.status_code != 200:
             self.show_dialog = dialog.ShowInfoDialog(
-                f"向后端接口发送请求时发生错误:\n\n{self.response.status_code}: {self.more_info_json['data']}")
+                f"向后端接口发送请求时发生错误:\n\n{self.response.status_code}: {self.more_info_json}")
             self.show_dialog.show_dialog()
             return
-        self.ini_config = self.more_info_json["data"]["config"]["server"] + "\n\n" + \
-                          self.more_info_json["data"]["config"]["client"]
+        self.ini_config = self.more_info_json["config"]["server"] + "\n\n" + \
+                          self.more_info_json["config"]["client"]
         try:
-            with open(f"temp/{self.more_info_json['data']['name']}.ini", 'w', encoding="utf-8") as f:
+            with open(f"temp/{self.more_info_json['name']}.ini", 'w', encoding="utf-8") as f:
                 f.write(self.ini_config)
         except FileNotFoundError:
             os.mkdir("temp")
-            with open(f"temp/{self.more_info_json['data']['name']}.ini", 'w', encoding="utf-8") as f:
+            with open(f"temp/{self.more_info_json['name']}.ini", 'w', encoding="utf-8") as f:
                 f.write(self.ini_config)
         self.baseLog = r"""   __  __ ___   ___         
   /  \/  / __/ / __/ _ ___ 
@@ -182,7 +182,7 @@ ME Frp 服务即将启动
 """
         self.outputLog.setText(self.baseLog)
         self.stopTunnelBtn.setDisabled(False)
-        os.system(f"start run.bat {self.more_info_json['data']['name']}")
+        os.system(f"start run.bat {self.more_info_json['name']}")
 
     def stop_tunnel(self):
         self.stopTunnelBtn.setDisabled(True)
@@ -201,24 +201,24 @@ ME Frp 服务即将启动
     def updateCreateTunnelPage(self):
         if self.protocol.currentText() == "HTTP":
             self.chooseServer.clear()
-            for i in range(len(self.servers["data"])):
-                if self.servers["data"][i]["allow_http"] == 1 and self.servers["data"][i]["status"] == "up":
-                    self.chooseServer.addItem(self.servers["data"][i]["name"])
+            for i in range(len(self.servers)):
+                if self.servers[i]["allow_http"] == 1 and self.servers[i]["status"] == "up":
+                    self.chooseServer.addItem(self.servers[i]["name"])
         elif self.protocol.currentText() == "HTTPS":
             self.chooseServer.clear()
-            for i in range(len(self.servers["data"])):
-                if self.servers["data"][i]["allow_https"] == 1 and self.servers["data"][i]["status"] == "up":
-                    self.chooseServer.addItem(self.servers["data"][i]["name"])
+            for i in range(len(self.servers)):
+                if self.servers[i]["allow_https"] == 1 and self.servers[i]["status"] == "up":
+                    self.chooseServer.addItem(self.servers[i]["name"])
         elif self.protocol.currentText() == "TCP":
             self.chooseServer.clear()
-            for i in range(len(self.servers["data"])):
-                if self.servers["data"][i]["allow_tcp"] == 1 and self.servers["data"][i]["status"] == "up":
-                    self.chooseServer.addItem(self.servers["data"][i]["name"])
+            for i in range(len(self.servers)):
+                if self.servers[i]["allow_tcp"] == 1 and self.servers[i]["status"] == "up":
+                    self.chooseServer.addItem(self.servers[i]["name"])
         elif self.protocol.currentText() == "UDP":
             self.chooseServer.clear()
-            for i in range(len(self.servers["data"])):
-                if self.servers["data"][i]["allow_udp"] == 1 and self.servers["data"][i]["status"] == "up":
-                    self.chooseServer.addItem(self.servers["data"][i]["name"])
+            for i in range(len(self.servers)):
+                if self.servers[i]["allow_udp"] == 1 and self.servers[i]["status"] == "up":
+                    self.chooseServer.addItem(self.servers[i]["name"])
         self.label_12.setText(re.sub("[A-Z]+", self.protocol.currentText(), self.label_12.text()))
         if self.protocol.currentText() == "HTTP" or self.protocol.currentText() == "HTTPS":
             self.specialArgument.setPlaceholderText("绑定域名")
@@ -245,9 +245,9 @@ ME Frp 服务即将启动
             }
             if self.protocol.currentText() == "UDP":
                 self.json_data["protocol"] = "udp"
-            for i in range(0, len(self.servers["data"])):
-                if self.servers["data"][i]["name"] == self.chooseServer.currentText():
-                    self.json_data["server_id"] = self.servers["data"][i]["id"]
+            for i in range(0, len(self.servers)):
+                if self.servers[i]["name"] == self.chooseServer.currentText():
+                    self.json_data["server_id"] = self.servers[i]["id"]
             self.response = requests.post('https://api.laecloud.com/api/modules/frp/hosts', headers=self.headers, json=self.json_data)
             self.response.encoding = self.response.apparent_encoding
             try:
@@ -278,9 +278,9 @@ ME Frp 服务即将启动
             }
             if self.protocol.currentText() == "HTTPS":
                 self.json_data["protocol"] = "https"
-            for i in range(0, len(self.servers["data"])):
-                if self.servers["data"][i]["name"] == self.chooseServer.currentText():
-                    self.json_data["server_id"] = self.servers["data"][i]["id"]
+            for i in range(0, len(self.servers)):
+                if self.servers[i]["name"] == self.chooseServer.currentText():
+                    self.json_data["server_id"] = self.servers[i]["id"]
             self.response = requests.post('https://api.laecloud.com/api/modules/frp/hosts', headers=self.headers,
                                           json=self.json_data)
             self.response.encoding = self.response.apparent_encoding
@@ -746,7 +746,7 @@ ME Frp 服务即将启动
             return
         if self.response.status_code != 200:
             self.show_dialog = dialog.ShowInfoDialog(
-                f"向后端接口发送请求时发生错误:\n\n{self.response.status_code}: {self.servers['data']}")
+                f"向后端接口发送请求时发生错误:\n\n{self.response.status_code}: {self.servers}")
             self.show_dialog.show_dialog()
             return
         # 如果有config.ini文件直接切换到隧道板块
