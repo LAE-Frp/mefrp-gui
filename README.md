@@ -1,4 +1,4 @@
-# Mirror Edge Frp 客户端 [已废弃 / Deprecated]
+# Mirror Edge Frp 客户端
 
 Desktop Client for Mirror Edge Frp
 
